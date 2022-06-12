@@ -1,34 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Table of contents
 
-## Getting Started
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
+### Screenshot
+
+![](./public/Screenshot.jpg)
+
+### Links
+
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+
+## My process
+
+### Built with
+
+- SCSS
+- Flexbox
+- CSS Grid
+- Laptop-first workflow
+- React Transition Group
+- [React](https://reactjs.org/) - JS library
+- [Next.js](https://nextjs.org/) - React framework
+
+### What I learned
+
+I learnt a lot on new things on next Js like:
+
+- Using getStaticProps and getStaticPaths to pre-render contents from server to browser.
+- Page routing
+- Integrating backend
+
+```Next.js
+export async function getStaticProps() {
+  const res = await fetch("https://restcountries.com/v3.1/all");
+
+  if (!res.ok) {
+    throw new Error("Something went wrong!");
+  }
+
+  const data = await res.json();
+
+  const loadedData = data.map((country) => {
+    return {
+      name: country.name.common,
+      population: country.population,
+      region: country.region,
+      capital: country.capital
+        ? country.capital
+        : "This country has no capital",
+      flag: country.flags.svg,
+    };
+  });
+
+  return {
+    props: {
+      newData: loadedData,
+    },
+    revalidate: 10,
+  };
+}
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Continued development
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- Next js
+- React Transition Groups
+- UseContext
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Author
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Frontend Mentor - [@ejim11](https://www.frontendmentor.io/profile/ejim11)
+- Twitter - [@favourejim56](https://www.twitter.com/favourejim56)
