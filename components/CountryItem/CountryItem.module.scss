@@ -1,0 +1,63 @@
+@import "../../styles/scss/base";
+@import "../../styles/scss/animation";
+@import "../../styles/scss/mixin";
+
+.country {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0.2rem 0.2rem 1rem 0.5rem rgba($color-dark-text, 0.1);
+
+  &_img {
+    position: relative;
+    width: 100%;
+    height: 14rem;
+
+    @include respond(phone) {
+      height: 16rem;
+    }
+  }
+
+  &_info {
+    padding: 2rem 2rem 4rem 2rem;
+
+    &_name {
+      font-weight: 800;
+      font-size: 1.6rem;
+      cursor: pointer;
+      width: auto;
+
+      &:hover {
+        color: $color-dark-text;
+      }
+    }
+
+    & p {
+      margin: 0.5rem 0;
+    }
+
+    & p span {
+      font-weight: 600;
+    }
+  }
+}
+
+.image {
+  max-width: 100%;
+}
+
+.info {
+  font-size: 1.4rem;
+}
+
+.bg-dark {
+  background-color: $color-dark-el;
+  color: $color-light-text;
+  animation: fadeBackgroundEl 0.3s ease-in;
+  -webkit-animation: fadeBackgroundEl 0.3s ease-in;
+}
+
+.bg_white {
+  background-color: $color-light-text;
+  color: $color-light-input;
+  animation: fadeBackgroundWhite 0.3s ease-in;
+}

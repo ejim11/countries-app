@@ -1,0 +1,61 @@
+@import "../../styles/scss/base";
+@import "../../styles/scss/animation";
+@import "../../styles/scss/mixin";
+
+.form {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  border-radius: 1rem;
+  box-shadow: 0.1rem 0rem 1rem 0rem rgba($color-dark-text, 0.1);
+  width: 30%;
+
+  @include respond(tablet) {
+    width: 40%;
+  }
+
+  @include respond(phone) {
+    width: 100%;
+  }
+
+  & input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 0 1rem 0 0rem;
+    background-color: transparent;
+    font-size: 1.4rem;
+    color: currentColor;
+
+    &::placeholder {
+      color: currentColor;
+    }
+  }
+}
+
+.icon-container {
+  padding: 1rem 2rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: currentColor;
+}
+
+.search-icon {
+  height: 2rem;
+  width: 2rem;
+  color: currentColor;
+  cursor: pointer;
+}
+
+.bg-dark {
+  background-color: $color-dark-el;
+  color: $color-light-text;
+  animation: fadeBackgroundEl 0.3s ease-in;
+}
+
+.bg_white {
+  background-color: $color-light-text;
+  color: $color-light-input;
+  animation: fadeBackgroundWhite 0.3s ease-in;
+}

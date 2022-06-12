@@ -1,0 +1,94 @@
+@import "../../styles/scss/base";
+@import "../../styles/scss/animation";
+@import "../../styles/scss/mixin";
+
+.list {
+  &_obj {
+    display: flex;
+
+    @include respond(phone) {
+      flex-wrap: wrap;
+    }
+
+    &-filter {
+      margin-left: auto;
+      position: relative;
+
+      @include respond(phone) {
+        margin-left: 0;
+        margin-top: 1.5rem;
+      }
+    }
+  }
+}
+
+.filter_heading {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  z-index: 11;
+  cursor: pointer;
+  border-radius: 1rem;
+  box-shadow: 0.1rem 0rem 1rem 0rem rgba($color-dark-text, 0.1);
+}
+
+.bg-dark {
+  background-color: $color-dark-el;
+  color: $color-light-text;
+}
+
+.bg_white {
+  background-color: #fff;
+  color: $color-dark-text;
+  // animation: fadeBackgroundWhite 0.3s ease-in;
+}
+
+.filter_icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: $color-dark-text;
+  margin-left: 1.5rem;
+}
+
+.regions {
+  // background-color: $color-light-text;
+  font-size: 1.6rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-dark-text;
+    background-color: rgba($color-dark-el, 0.3);
+  }
+}
+
+.regionList {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0.1rem 0rem 1rem 0rem rgba($color-dark-text, 0.1);
+}
+
+.countries {
+  margin-top: 4rem;
+  padding: 2rem 4rem;
+  display: grid;
+  grid-gap: 5rem;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+
+  @include respond(phone) {
+    padding: 2rem 2rem;
+  }
+}
+
+.fade-enter-active {
+  animation: titleAnimation 1s ease-out forwards;
+}
+
+.fade-exit-active {
+  animation: slideUp 1s ease-out forwards;
+}
