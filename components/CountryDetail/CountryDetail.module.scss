@@ -24,6 +24,7 @@
 .country {
   display: flex;
   align-items: flex-start;
+  padding-bottom: 4rem;
   @include respond(phone) {
     flex-direction: column;
   }

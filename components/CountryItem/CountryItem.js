@@ -22,10 +22,12 @@ const CountryItem = ({ country }) => {
   };
 
   return (
-    <div className={`${classes.country}  ${
-      ctx.isDarkMode ? classes["bg-dark"] : classes.bg_white
-    }`}>
-      <div className={classes.country_img}>
+    <div
+      className={`${classes.country}  ${
+        ctx.isDarkMode ? classes["bg-dark"] : classes.bg_white
+      }`}
+    >
+      <div className={classes.country_img} onClick={displayCountryContent}>
         <Image
           src={country.flag}
           alt="country-flag"
