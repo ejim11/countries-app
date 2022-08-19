@@ -87,6 +87,7 @@
 
 .fade-enter-active {
   animation: titleAnimation 1s ease-out forwards;
+  -webkit-animation: titleAnimation 1s ease-out forwards;
 }
 
 .fade-exit-active {
